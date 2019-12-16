@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script>
+
+
+
+function calculateContract() 
+{
+  //add
+  var itemOne = document.getElementById("burialRights").value;
+  var itemOneDiscount = document.getElementById("burialRightsDiscount").value;
+  
+  var itemOneDiscountCalc = (itemOneDiscount / 100) * itemOne;
+  var burRightsAfterDisc = itemOne - itemOneDiscountCalc;
+  
+  document.getElementById("burialRightsTotal").value = burRightsAfterDisc;
+  
+  var itemTwo = document.getElementById("perpCare").value;
+  var itemTwoDiscount = document.getElementById("perpCareDiscount").value;
+  
+  var itemTwoDiscountCalc = (itemTwoDiscount / 100) * itemTwo;
+  var perpCareAfterDisc = itemTwo - itemTwoDiscountCalc;
+  
+  document.getElementById("perpCareTotal").value = perpCareAfterDisc;
+  
+  //subtract
+  var itemThree = document.getElementById("certDiscount").value;
+  
+  //add
+  var itemFour = document.getElementById("secondRight").value;
+  var itemFourDiscount = document.getElementById("secondRightDiscount").value;
+  
+  var itemFourDiscountCalc = (itemFourDiscount / 100) * itemFour;
+  var secondRightAfterDisc = itemFour - itemFourDiscountCalc;
+  
+  document.getElementById("secondRightTotal").value = secondRightAfterDisc;
+  
+  
+  var itemFive = document.getElementById("vault").value;
+  var itemFiveDiscount = document.getElementById("vaultDiscount").value;
+  
+  var itemFiveDiscountCalc = (itemFiveDiscount / 100) * itemFive;
+  var vaultAfterDisc = itemFive - itemFiveDiscountCalc;
+  
+  document.getElementById("vaultTotal").value = vaultAfterDisc;
+  
+  var itemSix = document.getElementById("urn").value;
+  var itemSixDiscount = document.getElementById("urnDiscount").value;
+  
+  var itemSixDiscountCalc = (itemSixDiscount / 100) * itemSix;
+  var urnAfterDisc = itemSix - itemSixDiscountCalc;
+  
+  document.getElementById("urnTotal").value = urnAfterDisc;
+  
+  var itemSeven = document.getElementById("cryptPlate").value;
+  var itemSevenDiscount = document.getElementById("cryptPlateDiscount").value;
+  
+  var itemSevenDiscountCalc = (itemSevenDiscount / 100) * itemSeven;
+  var cryptAfterDisc = itemSeven - itemSevenDiscountCalc;
+  
+  document.getElementById("cryptPlateTotal").value = cryptAfterDisc;
+  
+  //add
+  var itemEight = document.getElementById("monPrice").value;
+  var itemEightDiscount = document.getElementById("monPriceDiscount").value;
+  
+  var itemEightDiscountCalc = (itemEightDiscount / 100) * itemEight;
+  var monAfterDisc = itemEight - itemEightDiscountCalc;
+  
+  document.getElementById("monPriceTotal").value = monAfterDisc;
+  
+  var itemNine = document.getElementById("granBase").value;
+  var itemNineDiscount = document.getElementById("granBaseDiscount").value; 
+  
+  var itemNineDiscountCalc = (itemNineDiscount / 100) * itemNine;
+  var granAfterDisc = itemNine - itemNineDiscountCalc;
+  
+  document.getElementById("granBaseTotal").value = granAfterDisc;
+  
+  //separate calc for adding sub items
+  var itemEleven = document.getElementById("markerInstCharge").value;
+  var itemTwelve = document.getElementById("vaultInstCharge").value;
+  var itemThirteen = document.getElementById("benchInstCharge").value;
+  var itemFourteen = document.getElementById("otherInstCharge").value;
+  
+  var totalInstallCharge = parseInt(itemEleven) + parseInt(itemTwelve) + parseInt(itemThirteen) + parseInt(itemFourteen);
+  document.getElementById("instTotal").value = totalInstallCharge;
+  
+  //add
+  var itemFifteen = document.getElementById("instTotal").value;
+  var itemFifteenDiscount = document.getElementById("instDiscount").value;
+  
+  var itemFifteenDiscountCalc = (itemFifteenDiscount / 100) * itemFifteen;
+  var instAfterDisc = itemFifteen - itemFifteenDiscountCalc;
+  
+  document.getElementById("instTotal").value = instAfterDisc;
+  
+  var itemSixteen = document.getElementById("caskets").value;
+  var itemSixteenDiscount = document.getElementById("casketsDiscount").value;
+  
+  var itemSixteenDiscountCalc = (itemSixteenDiscount / 100) * itemSixteen;
+  var casketsAfterDisc = itemSixteen - itemSixteenDiscountCalc;
+  
+  document.getElementById("casketsTotal").value = casketsAfterDisc;
+  
+  var itemSeventeen = document.getElementById("intInternFee").value;
+  var itemSeventeenDiscount = document.getElementById("intInternFeeDiscount").value;
+  
+  var itemSeventeenDiscountCalc = (itemSeventeenDiscount / 100) * itemSeventeen;
+  var intInternAfterDisc = itemSeventeen - itemSeventeenDiscountCalc;
+  
+  document.getElementById("intInternFeeTotal").value = intInternAfterDisc;
+ 
+ 
+  //initial fee gets split, 80 on top 20 on bottom 
+  
+  var itemEighteen = document.getElementById("topPercent").value; 
+  var itemNineteenTopDollarSplit = (itemEighteen / 100) * itemSeventeen;
+  
+  //console.log(itemNineteenTopDollarSplit;
+  
+  document.getElementById("topDollar").value = itemNineteenTopDollarSplit;
+  
+  var itemTwenty = document.getElementById("bottomPercent").value;
+  var itemTwentyBottomDollarSplit = (itemTwenty / 100) * itemSeventeen;
+  
+  document.getElementById("bottomDollar").value = itemTwentyBottomDollarSplit;
+  
+  var itemTwentyOne = document.getElementById("bottomDollar").value;
+  var itemTwentyOneDiscount = document.getElementById("intInternFeeTotal").value;
+  
+  
+  
+  
+  //add - check with customer to see if this is different than the above totals
+  var itemTwentyThree = document.getElementById("finalInternFee").value;
+  var itemTwentyThreeDiscount = document.getElementById("finalInternFeeDiscount").value;
+  
+  var itemTwentyThreeDiscountCalc = (itemTwentyThreeDiscount / 100) * itemTwentyThree;
+  var finalInternFeeAfterDisc = itemTwentyThree - itemTwentyThreeDiscountCalc;
+  
+  document.getElementById("finalInternTotal").value = finalInternFeeAfterDisc;
+  
+  //calc proc admin, then add
+  var itemTwentyFour = document.getElementById("procAdminFee").value;
+  var itemTwentyFourDiscount = document.getElementById("procAdminFeeDiscount").value;
+  
+  var itemTwentyFourDiscountCalc = (itemTwentyFourDiscount / 100) * itemTwentyFour;
+  var finalProcAdminFeeAfterDisc = itemTwentyFour - itemTwentyFourDiscountCalc;
+  
+  document.getElementById("procAdminFeeTotal").value = finalProcAdminFeeAfterDisc;
+  
+  //add
+  var itemTwentyFive = document.getElementById("permRecordFee").value;
+  var itemTwentyFiveDiscount = document.getElementById("permRecordDiscount").value;
+  
+  var itemTwentyFiveDiscountCalc = (itemTwentyFiveDiscount / 100) * itemTwentyFive;
+  var finalPermRecordTotalAfterDisc = itemTwentyFive - itemTwentyFiveDiscountCalc;
+  
+  document.getElementById("permRecordTotal").value = finalPermRecordTotalAfterDisc;
+  
+  var itemTwentySix = document.getElementById("other").value;
+  var itemTwentySixDiscount = document.getElementById("otherDiscount").value;
+  
+  var itemTwentySixDiscountCalc = (itemTwentySixDiscount / 100) * itemTwentySix;
+  var otherTotalAfterDisc = itemTwentySix - itemTwentySixDiscountCalc;
+  
+  document.getElementById("otherTotal").value = otherTotalAfterDisc;
+  
+  //calc as percent although default not used
+  //I'm not implementing this until I get more word from the customer on their policy
+  //assume this will be totalCashPriceAfterDisc multiplied by state sales tax
+  var itemTwentySeven = document.getElementById("salesTax").value;
+  
+  //total value of ALL
+  var totalCashPriceCalc = burRightsAfterDisc + perpCareAfterDisc -itemThree + secondRightAfterDisc + 
+  vaultAfterDisc + urnAfterDisc + cryptAfterDisc + monAfterDisc + granAfterDisc + instAfterDisc +
+  casketsAfterDisc + intInternAfterDisc + finalInternFeeAfterDisc + finalProcAdminFeeAfterDisc + 
+  finalPermRecordTotalAfterDisc + otherTotalAfterDisc;
+  
+  document.getElementById("totalCashPrice").value = totalCashPriceCalc;
+  
+  
+  
+  var itemTwentyEight = document.getElementById("totalCashPrice").value;
+  var itemTwentyEightDiscount = document.getElementById("totalCashPriceDiscount").value;
+  
+  //need more info for financing calcs
+  var itemTwentyNine = document.getElementById("downPmt").value;
+  var itemThirty = document.getElementById("tradeIn").value;
+  var itemThirtyOne = document.getElementById("oldAgreeNum").value;
+  var itemThirtyTwo = document.getElementById("totalDownPmt").value;
+  var itemThirtyThree = document.getElementById("unpaidBalance").value;
+  var itemThirtyFour = document.getElementById("financeCharge").value;
+  var itemThirtyFive = document.getElementById("totalUnpaidBalance").value;
+  
+  
+  //This is the calc for the total installation charge
+  //var totalInstallCharge = parseInt(itemEleven) + parseInt(itemTwelve) + parseInt(itemThirteen) + parseInt(itemFourteen);
+  //This prints to the form
+  //document.getElementById("totalInstCharge").value = totalInstallCharge;
+  
+  
+  //This is for proc admin fee
+  //if total amount is < 500 bucks = $0, if it's greater than 500 but less than 2000 it is 195, if it's greater than 2000 it's 295
+  //Calc proc admin fee 
+  
+  
+  
+  //total cash price calc -- all values including discount calcs
+ 
+}
+
+
+
+
+</script>
+</head>
+
+<body>
+
+<H2> Ashleigh J's Contract Sheet (DEMO) - Created by Matt Jacobus - Copyright Matt Jacobus 2019</H2> 
+<H3> Itemization of Charges </H3>
+
+
+
+
+<form>
+
+  A: Burial Rights as Indicated :
+  <input type="number" id="burialRights" value="0"><br>
+	Discount% :
+	<input type="number" id="burialRightsDiscount" value="0"><br>
+	Price After Discount :
+  <input type="number" id="burialRightsTotal" value="0"><br><br>
+  
+  B: Perpetual Care :
+  <input type="number" id="perpCare" value="0"><br>
+  Discount% :
+	<input type="number" id="perpCareDiscount" value="0"><br>
+	Price After Discount :
+  <input type="number" id="perpCareTotal" value="0"><br><br>
+  
+  C: Less Certificate Discount $ amount :
+  <input type="number" id="certDiscount" value="0"><br><br>
+  
+  D: Second Right of Internment :
+  <input type="number" id="secondRight" value="0"><br>
+  Discount% :
+	<input type="number" id="secondRightDiscount" value="0"><br>
+	Price After Discount :
+  <input type="number" id="secondRightTotal" value="0"><br><br>
+  
+  E: Vault(s) :
+  <input type="number" id="vault" value="0"><br>
+  Discount% :
+	<input type="number" id="vaultDiscount" value="0"><br>
+	Price After Discount :
+  <input type="number" id="vaultTotal" value="0"><br><br>
+  
+  F: Urn(s) :
+  <input type="number" id="urn" value="0"><br>
+  Discount% :
+	<input type="number" id="urnDiscount" value="0"><br>
+	Price After Discount :
+  <input type="number" id="urnTotal" value="0"><br><br>
+  
+  G: Mausoleum Lettering/Crypt Plate :
+  <input type="number" id="cryptPlate" value="0"><br>
+  Discount% :
+	<input type="number" id="cryptPlateDiscount" value="0"><br>
+	Price After Discount :
+  <input type="number" id="cryptPlateTotal" value="0"><br><br>
+  
+  H: Memorial/Monument : <br><br>
+	Monument Total Price :
+  <input type="number" id="monPrice" value="0"><br>
+	Percent Discount %:
+  <input type="percent" id="monPriceDiscount" value="0"><br>
+    Price After Discount :
+  <input type="number" id="monPriceTotal" value="0"><br><br>
+  
+  I: Granite Base(s) :
+  <input type="number" id="granBase" value="0"><br>
+  Percent Discount %:
+  <input type="percent" id="granBaseDiscount" value="0"><br>
+    Price After Discount :
+  <input type="number" id="granBaseTotal" value="0"><br><br>
+  
+  J: Installation Charge : <br><br>
+  
+	Marker Installation
+	  <input type="number" id="markerInstCharge" value="0"><br>
+	Vault Installation
+	  <input type="number" id="vaultInstCharge" value="0"><br>
+	Bench Installation
+	  <input type="number" id="benchInstCharge" value="0"><br>
+	Other Installation
+	  <input type="number" id="otherInstCharge" value="0"><br><br>
+	Discount% :
+	<input type="number" id="instDiscount" value="0"><br>
+	Total Installation Charge : 
+	  <input type="number" id="instTotal"><br><br>
+
+  
+  K: Caskets :
+  <input type="number" id="caskets" value="0"><br>
+  Percent Discount %:
+  <input type="percent" id="casketsDiscount" value="0"><br>
+    Price After Discount :
+  <input type="number" id="casketsTotal" value="0"><br><br>
+  
+
+  L: Initial Fee for Internment :
+  <input type="number" id="intInternFee" value="0"><br><br>
+	
+   Is this Internment below ground?
+  <input type="radio" id="intRadioYes" name="intAdminYesNo" value="Yes"> Yes
+  <input type="radio" id="intRadioNo" name="intAdminYesNo" value="No"> No
+  <br><br>
+	
+	Below Ground<br>
+	Top Split (Usually 80%) Percentage
+	<input type="percent" id="topPercent" value="80"><br>
+	Dollar Amount : <input type="number" id="topDollar"><br><br>
+	Bottom Split (Usually 20%) Percentage
+	<input type="percent" id="bottomPercent" value="20"><br>
+	Dollar Amount : <input type="number" id="bottomDollar"><br><br>
+	Percent Discount %:
+    <input type="percent" id="intInternFeeDiscount" value="0"><br>
+    Price After Discount :
+    <input type="number" id="intInternFeeTotal" value="0"><br><br>
+  
+  M: Final Internment/Entombment/Inurnment Fee :
+  <input type="number" id="finalInternFee" value="0"><br>
+  Percent Discount %:
+  <input type="percent" id="finalInternFeeDiscount" value="0"><br>
+    Price After Discount :
+  <input type="number" id="finalInternTotal" value="0"><br><br>
+  
+  Has this customer paid the admin fee in the last 90 days? <br><br> 
+  <input type="radio" id="procRadioYes" name="procAdminYesNo" value="Yes"> Yes
+  <input type="radio" id="procRadioNo" name="procAdminYesNo" value="No"> No
+  <br><br>
+  
+  N: Processing and Administrative Fee :
+  <input type="number" id="procAdminFee" value="0"><br>
+  Percent Discount %:
+  <input type="percent" id="procAdminFeeDiscount" value="0"><br>
+    Price After Discount :
+  <input type="number" id="procAdminFeeTotal" value="0"><br><br>
+  
+ <!-- 
+  if total amount is < 500 bucks = $0, if it's greater than 500 but less than 2000 it is 195, if it's greater than 2000 it's 295
+  !-->
+  O: Permanent Records Fee :
+  <input type="number" id="permRecordFee" value="0"><br>
+  Percent Discount %:
+  <input type="percent" id="permRecordDiscount" value="0"><br>
+    Price After Discount :
+  <input type="number" id="permRecordTotal" value="0"><br><br>
+
+  
+  P: Other :
+  <input type="number" id="other" value="0"><br>
+  Percent Discount %:
+  <input type="percent" id="otherDiscount" value="0"><br>
+    Price After Discount :
+  <input type="number" id="otherTotal" value="0"><br><br>
+  
+  Q: Sales Tax :
+  <input type="number" id="salesTax" value="0"><br><br>
+
+  <b>TOTAL Cash Price: A Thru Q : </b>
+  <input type="number" id="totalCashPrice" value="0"><br>
+  Percent Discount %:
+  <input type="percent" id="totalCashPriceDiscount" value="0"><br>
+    Price After Discount :
+  <input type="number" id="totalCashPriceTotal" value="0"><br><br>
+  
+<H3> Itemization of the Amount Financed (need more info to complete) </H3>
+
+  1. Total Cash Price 
+  
+  <input type="number" id="totalCashPrice" value="0"><br><br>
+ 
+  2.A. Down Payments   
+  <input type="number" id="downPmt" value="0"><br>
+  <input type="checkbox" id="cash" value="cash" checked>Cash<br>
+  <input type="checkbox" id="check" value="check" checked>Check<br>
+  <input type="checkbox" id="credit" value="credit" checked>Credit Card<br>
+
+  <br>
+
+  2.B. Trade In :
+  <input type="number" id="tradeIn" value="0"><br>
+  Old Agreement No. :
+  <input type="number" id="oldAgreeNum" value="0"><br><br>
+  
+  2.c. Total Down Payment (2A + 2B) :
+  <input type="number" id="totalDownPmt" value="0"><br>  
+  3. Unpaid Balance of Cash Price/Amount Financed (1-2C) :
+  <input type="number" id="unpaidBalance" value="0"><br>
+  4. Finance Charge :
+  <input type="number" id="financeCharge" value="0"><br>
+  5. Total Unpaid Balance: (3+4) :
+  <input type="number" id="totalUnpaidBalance" value="0"><br><br><br>
+  
+  
+  <!--
+  total amount, loanterm, interestrate, payment amount
+  loanTerm 12-48months
+  interestRate = variable
+  
+  total amount - downpayment, finance amount (is what is charged on) * interest rate from table / number of months
+ /!-->
+
+<input type="button" value="Calculate" onclick="calculateContract()">
+
+
+</form>
+
+
+
+</body>
+</HTML>
